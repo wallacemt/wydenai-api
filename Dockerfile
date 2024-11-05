@@ -1,17 +1,8 @@
 # Use a imagem oficial do PHP como base
 FROM php:8.1-apache
 
-# Atualizar pacotes e instalar dependências necessárias
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    libcurl4-openssl-dev \
-    && docker-php-ext-install \
-    pdo \
-    mbstring \
-    gd \
-    xml \
-    bcmath \
-    opcache
+# Instale as extensões necessárias
+RUN docker-php-ext-install 
 
 # Instale o Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
