@@ -1,5 +1,5 @@
 # Use a imagem oficial do PHP como base
-FROM php:8.0-apache
+FROM php:8.1-apache
 
 # Instale as extensões necessárias
 RUN docker-php-ext-install pdo pdo_mysql
