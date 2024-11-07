@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php'; // Autoload do Composer
+require '../vendor/autoload.php'; // Autoload do Composer
 
 use Kreait\Firebase\Exception\Auth\EmailExists;
 use Kreait\Firebase\Exception\FirebaseException;
@@ -42,7 +42,7 @@ function cadastrarUsuario($email, $password, $nome, $curso) {
             'nome' => $nome,
             'password' => $hashedPassword,
             'curso' => $curso,
-            'created_at' => date('Y-m-d H:i:s')
+            'created_at' => (new DateTime())->format('Y-m-d H:i:s')
         ]);
     } catch (EmailExists $e) {
         return ['error' => 'E-mail já está em uso.'];
@@ -51,7 +51,6 @@ function cadastrarUsuario($email, $password, $nome, $curso) {
     } catch (\Exception $e) {
         return ['error' => 'Erro inesperado: ' . $e->getMessage()];
     }
-    
 
     return ['message' => 'Usuário criado com sucesso!', 'userId' => $user->uid];
 }

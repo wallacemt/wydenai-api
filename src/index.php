@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 require './cadastro.php';
 require './login.php';
 use Kreait\Firebase\Factory;

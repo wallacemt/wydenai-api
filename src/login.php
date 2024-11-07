@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php'; // Autoload do Composer
+require '../vendor/autoload.php'; // Autoload do Composer
 use Kreait\Firebase\Exception\Auth\UserNotFound;
 use Kreait\Firebase\Exception\Auth\InvalidPassword;
 use Kreait\Firebase\Exception\FirebaseException;
