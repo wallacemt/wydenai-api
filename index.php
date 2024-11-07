@@ -59,6 +59,8 @@ switch ($requestMethod) {
                 error_log($e->getMessage());
                 echo json_encode(['error' => $e->getMessage()]);
             }
+        }else if (strpos($requestUri, '/') !== false){
+            echo 'Teste API';
         }
         break;
     default:
